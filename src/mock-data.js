@@ -1,15 +1,26 @@
-// function getStartOfWeek(date) {
-//   const startOfWeek = new Date();
-//   startOfWeek.setDate(date.getDate() - date.getDay());
-//   startOfWeek.setHours(0, 0, 0, 0);
-//   return startOfWeek;
-// }
+function getStartOfWeek(date) {
+  const startOfWeek = new Date();
+  startOfWeek.setDate(date.getDate() - date.getDay());
+  startOfWeek.setHours(0, 0, 0, 0);
+  return startOfWeek;
+}
+
+const today = new Date();
+const prevWeek = new Date();
+const prevPrevWeek = new Date();
+
+prevWeek.setDate(today.getDate() - 7);
+prevPrevWeek.setDate(today.getDate() - 14);
 
 export const weekGoals = [
-  // {
-  //   weekStart: getStartOfWeek(new Date()),
-  //   goal: 2,
-  // },
+  {
+    weekStart: getStartOfWeek(prevPrevWeek),
+    goal: 14,
+  },
+  {
+    weekStart: getStartOfWeek(prevWeek),
+    goal: 10,
+  },
 ];
 export const stories = [
   {

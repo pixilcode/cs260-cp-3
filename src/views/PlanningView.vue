@@ -61,7 +61,11 @@ export default {
     this.startDay = this.$root.$data.currWeek.startDay;
     this.endDay = this.$root.$data.currWeek.endDay;
     this.stories = this.$root.$data.stories.filter(
-      (story) => story.status === "In Progress" || story.status === "Completed"
+      (story) =>
+        story.status === "In Progress" ||
+        (story.status === "Completed" &&
+          story.completionDate.getTime() > this.startDay.getTime() &&
+          story.completionDate.getTime() <= this.endDay.getTime())
     );
   },
   methods: {

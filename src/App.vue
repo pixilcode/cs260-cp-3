@@ -6,6 +6,9 @@
       <router-link to="/stories">Stories</router-link>
     </nav>
     <router-view />
+    <footer>
+      <a href="https://github.com/pixilcode/cs260-cp-3">Github Repository</a>
+    </footer>
   </div>
 </template>
 
@@ -29,5 +32,15 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+footer {
+  width: 100%;
+  text-align: right;
+  margin-top: 2rem;
+}
+
+footer a {
+  margin-right: 2.5vw;
 }
 </style>
