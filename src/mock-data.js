@@ -22,6 +22,7 @@ export const weekGoals = [
     goal: 10,
   },
 ];
+
 export const stories = [
   {
     id: 1,
@@ -31,27 +32,27 @@ export const stories = [
       goal: "a module that I can use to make API calls",
       purpose: "I don't have to worry about the details of making an API call",
     },
-    status: "In Progress",
-    completionDate: null,
+    status: "Completed",
+    completionDate: prevWeek,
     points: 13,
     tasks: [
       {
         id: 0,
-        completed: false,
+        completed: true,
         title: "Get Person ID",
-        completionDate: null,
+        completionDate: prevPrevWeek,
       },
       {
         id: 1,
-        completed: false,
+        completed: true,
         title: "Get all buildings",
-        completionDate: null,
+        completionDate: prevPrevWeek,
       },
       {
         id: 2,
         completed: true,
         title: "Get vending machine locations",
-        completionDate: new Date(),
+        completionDate: prevWeek,
       },
     ],
   },

@@ -40,7 +40,7 @@
       <section id="tasks">
         <h2>Tasks</h2>
         <section
-          v-for="story in stories"
+          v-for="story in currStories"
           :key="story.id"
           class="story"
           :id="`story${story.id}`"
@@ -87,7 +87,14 @@ export default {
     };
   },
   created() {
-    this.stories = this.$root.$data.stories;
+    this.stories = this.stories = this.$root.$data.stories;
+    this.currStories = this.$root.$data.stories.filter(
+      (story) =>
+        story.status === "In Progress" ||
+        (story.status === "Completed" &&
+          story.completionDate.getTime() > this.currWeek.startDay.getTime() &&
+          story.completionDate.getTime() <= this.currWeek.endDay.getTime())
+    );
     this.currWeek = this.$root.$data.currWeek;
     this.weekGoals = this.$root.$data.weekGoals;
   },

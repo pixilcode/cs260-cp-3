@@ -32,7 +32,12 @@
           <input type="number" v-model="story.points" min="1" />
         </p>
         <p class="points" v-else>{{ story.points }}</p>
-        <p class="storyStatus">{{ story.status }}</p>
+        <p class="storyStatus">
+          {{ story.status }}
+          <span v-if="story.completionDate"
+            >({{ story.completionDate.toDateString() }})</span
+          >
+        </p>
         <div class="controls">
           <input
             type="button"
